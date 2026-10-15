@@ -1,0 +1,19 @@
+# Simulation (keep these four on the same version)
+eclipse-sumo==1.28.0
+traci==1.28.0
+sumolib==1.28.0
+libsumo==1.28.0
+pyproj>=3.6
+# Agent
+ollama>=0.4
+pydantic>=2.6
+rapidfuzz>=3.6
+# App
+streamlit>=1.40
+folium>=0.17
+streamlit-folium>=0.22
+pandas>=2.1
+plotly>=5.20
+# Data
+requests>=2.31
+holidays>=0.50

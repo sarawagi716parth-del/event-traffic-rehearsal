@@ -1,0 +1,46 @@
+/* Calm, formal look in the spirit of UX4G (Government of India design system):
+   light background, one deep blue, status colours only for status. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&display=swap');
+
+:root {
+  --blue: #123E7C; --blue-soft: #E8EEF7; --ink: #1B2430; --muted: #5B6675;
+  --green: #1E7B47; --amber: #B26B00; --red: #B42318; --line: #E3E7ED;
+}
+html, body, [class*="css"], .stMarkdown, button, input, textarea {
+  font-family: 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', sans-serif !important;
+  font-size: 16px;
+}
+.block-container { padding-top: 1.2rem; max-width: 1280px; }
+h1, h2, h3 { color: var(--ink); font-weight: 600; letter-spacing: 0; }
+
+.etr-header { display:flex; align-items:center; gap:14px; padding: 6px 0 14px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.etr-logo { width:38px; height:38px; border-radius:10px; background: var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.etr-title { font-size: 1.35rem; font-weight: 600; color: var(--ink); }
+.etr-sub { color: var(--muted); font-size: 0.95rem; }
+
+.etr-steps { display:flex; gap:8px; margin: 4px 0 18px; flex-wrap: wrap; }
+.etr-step { flex:1; min-width: 150px; padding: 10px 12px; border-radius: 10px; background: #fff; border:1px solid var(--line); color: var(--muted); font-size: 0.93rem; }
+.etr-step b { display:inline-block; width:24px; height:24px; line-height:24px; text-align:center; border-radius:50%; background: var(--line); color: var(--ink); margin-right:8px; font-size: 0.85rem; }
+.etr-step.active { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); font-weight:600; }
+.etr-step.active b { background: var(--blue); color: #fff; }
+.etr-step.done b { background: var(--green); color: #fff; }
+
+.etr-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; box-shadow: 0 1px 3px rgba(16,24,40,.06); margin-bottom: 12px; }
+.etr-card h4 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; }
+.etr-card.best { border: 2px solid var(--blue); }
+.etr-muted { color: var(--muted); font-size: 0.92rem; }
+.etr-num { font-size: 1.6rem; font-weight: 600; color: var(--ink); }
+.etr-numlabel { color: var(--muted); font-size: 0.85rem; }
+
+.chip { display:inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin-right:6px; }
+.chip.draft { background:#EEF0F3; color:#3B4554; }
+.chip.running { background:#E8EEF7; color: var(--blue); }
+.chip.review { background:#FFF4E0; color: var(--amber); }
+.chip.approved, .chip.pass { background:#E6F4EC; color: var(--green); }
+.chip.fail { background:#FDECEA; color: var(--red); }
+
+.etr-log { font-family: 'Noto Sans Mono', ui-monospace, monospace; font-size: 0.88rem; white-space: pre-wrap; background:#FAFBFC; border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+.etr-legend span { display:inline-block; margin-right:14px; font-size:0.88rem; }
+.etr-legend i { display:inline-block; width:22px; height:5px; border-radius:3px; margin-right:6px; vertical-align: middle; }
+div.stButton > button[kind="primary"] { background: var(--blue); border-color: var(--blue); font-weight: 600; padding: 0.5rem 1.2rem; }
+footer { visibility: hidden; }
