@@ -1,0 +1,32 @@
+{
+ "id": "diljit_2024-12-14",
+ "title": "Diljit Dosanjh concert, Exhibition Ground, Sector 34, 14 Dec 2024",
+ "events": [{
+  "type": "concert",
+  "name": "Diljit Dosanjh concert (Dil-Luminati tour)",
+  "venue": "Exhibition Ground, Sector 34",
+  "date": "2024-12-14",
+  "arrival_start": "15:00",
+  "show_start": "19:00",
+  "show_end": "22:00",
+  "crowd": 20000,
+  "exit_minutes": 45,
+  "notes": "Entry opened at 3 PM and the court required the show to end by 10 PM (reported). The 7 PM start is our assumption. Crowd size was not reported; 20,000 matches the Karan Aujla show a week earlier."
+ }],
+ "normal": {"total_daily_trips": 120000},
+ "protected_hospitals": [],
+ "ambulance_limit_min": 5,
+ "rain": "none",
+ "sim_begin": "13:00",
+ "sim_end": "25:00",
+ "assumptions": [
+  "Crowd 20,000 (not reported for this show; Karan Aujla drew over 20,000 a week earlier)",
+  "Show from 19:00 to 22:00; arrivals from 15:00, busiest in the last two hours",
+  "Travel mode: car 50%, two-wheeler 25%, cab or auto 20%, walk 5%",
+  "People per vehicle: car 2.5, two-wheeler 1.5, cab 2.5",
+  "Visitors from Chandigarh 50%, Mohali 20%, Panchkula and Zirakpur 15%, outside 15%",
+  "Normal traffic: 120,000 trips a day on a standard two-peak curve (to be tuned, see docs)",
+  "Parking capacities estimated from ground sizes",
+  "Signal timings are SUMO defaults"
+ ]
+}

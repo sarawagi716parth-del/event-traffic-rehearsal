@@ -1,0 +1,52 @@
+{
+ "about": "Named places for Chandigarh. scripts/build_network.py finds each one on the map: first by its OpenStreetMap name (osm_names), then from the sector grid (sectors: the sectors that meet at a chowk, or the sector a ground sits in). Positions that come from the sector grid are approximate; check them on the map preview and fix any wrong one in data/places_manual.json. Names come from the December 2024 police advisories (docs/02-december-2024-concerts.md). Parking capacities are estimates from ground sizes, not official figures.",
+ "bbox": {"south": 30.665, "west": 76.695, "north": 30.795, "east": 76.835},
+ "places": [
+  {"name": "Exhibition Ground, Sector 34", "kind": "venue", "aliases": ["Sector 34 ground", "Exhibition Ground", "Sector 34 Exhibition Ground"], "osm_names": ["Exhibition Ground"], "sectors": [34]},
+  {"name": "Rally Ground, Sector 25", "kind": "venue", "aliases": ["Rally Ground", "Sector 25 Rally Ground"], "osm_names": ["Rally Ground"], "sectors": [25]},
+
+  {"name": "Piccadilly Chowk", "kind": "junction", "aliases": ["Piccadily Chowk", "Sector 21/22/34/35 Chowk"], "osm_names": ["Piccadily Chowk", "Piccadilly Chowk"], "sectors": [21, 22, 34, 35], "sensitive_area": true},
+  {"name": "New Labour Chowk", "kind": "junction", "aliases": ["Labour Chowk"], "osm_names": ["New Labour Chowk", "Labour Chowk"], "sectors": null},
+  {"name": "Sector 20/21/33/34 Chowk", "kind": "junction", "aliases": [], "sectors": [20, 21, 33, 34], "sensitive_area": true},
+  {"name": "Sector 33/34/44/45 Chowk", "kind": "junction", "aliases": ["Sector 33/45 Chowk"], "sectors": [33, 34, 44, 45]},
+  {"name": "Sector 34/35/43/44 Chowk", "kind": "junction", "aliases": [], "sectors": [34, 35, 43, 44]},
+  {"name": "Sector 33/34 light point", "kind": "junction", "aliases": ["Sector 33/34 light point"], "sectors": [33, 34], "sensitive_area": true},
+  {"name": "Sector 44/45 light point", "kind": "junction", "aliases": [], "sectors": [44, 45]},
+  {"name": "Sector 32 junction", "kind": "junction", "aliases": ["Sector 32 chowk", "Sector 20/21/32/33 Chowk"], "sectors": [20, 32, 33, 19]},
+  {"name": "Sham Mall T-point", "kind": "junction", "aliases": ["Sham Fashion Mall T-point"], "osm_names": ["Sham Mall", "Sham Fashion Mall"], "sectors": null, "sensitive_area": true},
+  {"name": "Polka turn", "kind": "junction", "aliases": ["Polka Turn"], "osm_names": ["Polka"], "sectors": null},
+  {"name": "Gaushala Chowk", "kind": "junction", "aliases": [], "osm_names": ["Gaushala Chowk", "Gaushala"], "sectors": null},
+  {"name": "Faidan Chowk", "kind": "junction", "aliases": ["Faidan", "Faidan side"], "osm_names": ["Faidan"], "sectors": null},
+  {"name": "Kajheri Chowk", "kind": "junction", "aliases": ["Kajheri"], "osm_names": ["Kajheri"], "sectors": null},
+  {"name": "South End Chowk", "kind": "junction", "aliases": ["South End"], "osm_names": ["South End Chowk", "South End"], "sectors": null},
+  {"name": "Gurudwara Chowk", "kind": "junction", "aliases": [], "osm_names": ["Gurudwara Chowk"], "sectors": null},
+  {"name": "Bhawan Vidyalaya School T-point", "kind": "junction", "aliases": ["Bhavan Vidyalaya T-point"], "osm_names": ["Bhavan Vidyalaya", "Bhawan Vidyalaya"], "sectors": null},
+  {"name": "Sector 14/15/24/25 Chowk", "kind": "junction", "aliases": [], "sectors": [14, 15, 24, 25]},
+  {"name": "Sector 24/25/37/38 Chowk", "kind": "junction", "aliases": [], "sectors": [24, 25, 37, 38]},
+  {"name": "Bhaskar Chowk", "kind": "junction", "aliases": [], "osm_names": ["Bhaskar Chowk", "Bhaskar"], "sectors": null},
+  {"name": "Dadu Majra light point", "kind": "junction", "aliases": ["Dadumajra light point"], "osm_names": ["Dadu Majra", "Dadumajra"], "sectors": null},
+  {"name": "Yatri Niwas Chowk", "kind": "junction", "aliases": [], "osm_names": ["Yatri Niwas"], "sectors": null},
+  {"name": "Dhanas turn", "kind": "junction", "aliases": ["Dhanas"], "osm_names": ["Dhanas"], "beyond": [25, 24]},
+
+  {"name": "Sector 33/34 dividing road", "kind": "road", "from": "Sector 20/21/33/34 Chowk", "to": "Sector 33/34/44/45 Chowk", "sensitive_area": true},
+  {"name": "Sector 21/34 dividing road", "kind": "road", "from": "Piccadilly Chowk", "to": "Sector 20/21/33/34 Chowk", "sensitive_area": true},
+  {"name": "Sector 34/35 dividing road", "kind": "road", "from": "Piccadilly Chowk", "to": "Sector 34/35/43/44 Chowk", "sensitive_area": true},
+  {"name": "Sector 34/44 dividing road", "kind": "road", "from": "Sector 34/35/43/44 Chowk", "to": "Sector 33/34/44/45 Chowk"},
+  {"name": "Sector 14/25 dividing road", "kind": "road", "from": "Sector 14/15/24/25 Chowk", "to": "Dhanas turn"},
+  {"name": "Sector 25/38 dividing road", "kind": "road", "from": "Sector 24/25/37/38 Chowk", "to": "Dhanas turn"},
+  {"name": "Sector 24/25 dividing road", "kind": "road", "from": "Sector 14/15/24/25 Chowk", "to": "Sector 24/25/37/38 Chowk"},
+
+  {"name": "Sector 17 multilevel parking", "kind": "parking", "aliases": ["Sector 17 multi-level parking", "Sector 17 MLCP", "Sector 17 parking"], "osm_names": ["Multi Level Parking", "Multilevel Parking", "Multi-Level Parking"], "sectors": [17], "capacity": 1500},
+  {"name": "Dussehra Ground, Sector 43", "kind": "parking", "aliases": ["Sector 43 Dussehra Ground", "Sector 43 ground"], "sectors": [43], "capacity": 1200},
+  {"name": "Ground opposite Laxmi Narayan Mandir, Sector 44", "kind": "parking", "aliases": ["Sector 44 ground", "Laxmi Narayan Mandir ground"], "osm_names": ["Laxmi Narayan Mandir"], "sectors": [44], "capacity": 600},
+  {"name": "Dussehra Ground, Sector 45", "kind": "parking", "aliases": ["Sector 45 Dussehra Ground", "Sector 45 ground"], "sectors": [45], "capacity": 800},
+  {"name": "Mandi Ground, Sector 29", "kind": "parking", "aliases": ["Sector 29 Mandi Ground", "Sector 29 ground"], "sectors": [29], "capacity": 1000},
+  {"name": "Grain Market Ground, Sector 39", "kind": "parking", "aliases": ["Sector 39 Grain Market", "Sector 39 ground"], "osm_names": ["Grain Market"], "sectors": [39], "capacity": 1200},
+  {"name": "Sector 34 parking zones", "kind": "parking", "aliases": ["Sector 34 parking"], "sectors": [34], "capacity": 1500, "note": "The ten parking zones inside Sector 34 used for the Karan Aujla show on 7 Dec 2024"},
+
+  {"name": "Chandigarh", "kind": "origin", "interior": true},
+  {"name": "Mohali", "kind": "origin", "fringe_bearing": [200, 300]},
+  {"name": "Panchkula and Zirakpur", "kind": "origin", "fringe_bearing": [45, 175]},
+  {"name": "Outside the Tricity", "kind": "origin", "fringe_major": true}
+ ]
+}

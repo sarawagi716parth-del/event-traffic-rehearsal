@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import gzip
 import json
-import multiprocessing as mp
 import os
 import pickle
 import time
@@ -223,14 +222,45 @@ def load_raw(path) -> dict:
 
 
 def run_many(jobs: list[dict], workers: int | None = None) -> list[str]:
-    """Run several seeds or plans at the same time, one process each."""
+    """Run several seeds or plans at the same time, each in its own process.
+
+    Separate processes (python -m sim.worker) work the same way on Windows and
+    Linux and inside Streamlit.
+    """
+    import subprocess
+    import sys
+
     if workers is None:
-        workers = max(1, min(len(jobs), (os.cpu_count() or 2) - 1))
-    if workers == 1 or len(jobs) == 1:
-        return [run_one(j) for j in jobs]
-    ctx = mp.get_context("spawn")
-    with ctx.Pool(workers) as pool:
-        return pool.map(run_one, jobs)
+        workers = int(os.environ.get("ETR_WORKERS", max(1, min(len(jobs), (os.cpu_count() or 2) - 1))))
+    pending = list(enumerate(jobs))
+    running, results, errors = [], [None] * len(jobs), []
+    while pending or running:
+        while pending and len(running) < workers:
+            i, job = pending.pop(0)
+            Path(job["out_dir"]).mkdir(parents=True, exist_ok=True)
+            jf = Path(job["out_dir"]) / "job.json"
+            jf.write_text(json.dumps(job), encoding="utf-8")
+            log = open(Path(job["out_dir"]) / "worker.log", "w", encoding="utf-8")
+            proc = subprocess.Popen([sys.executable, "-m", "sim.worker", str(jf)], cwd=str(config.ROOT),
+                                    stdout=subprocess.PIPE, stderr=log, text=True)
+            running.append((i, proc, log))
+        time.sleep(0.5)
+        for item in list(running):
+            i, proc, log = item
+            if proc.poll() is None:
+                continue
+            running.remove(item)
+            out = proc.stdout.read().strip().splitlines()
+            log.close()
+            path = Path(jobs[i]["out_dir"]) / "raw.pkl.gz"
+            if proc.returncode == 0 and path.exists():
+                results[i] = str(path)
+            else:
+                tail = (Path(jobs[i]["out_dir"]) / "worker.log").read_text(encoding="utf-8")[-800:]
+                errors.append(f"seed {jobs[i]['seed']}: exit {proc.returncode}: {tail}")
+    if errors:
+        raise RuntimeError("Simulation failed: " + " || ".join(errors))
+    return results
 
 
 def jobs_for(scn: Scenario, plan: Plan | None, run_dir: Path, seeds, net_name=None, keep_xml=False):

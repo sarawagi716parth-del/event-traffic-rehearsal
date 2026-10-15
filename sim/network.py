@@ -219,5 +219,40 @@ def upstream_edges(net, node_id: str, usable_edges: set[str], depth_m: float = 6
     return result
 
 
+def fringe_edges(net, usable_edges: set[str], center, bearing=None, major_only=False, k=6) -> list[str]:
+    """Entry roads at the edge of the map (where traffic from Mohali, Panchkula,
+    Zirakpur and the highways comes in). `bearing` = [from, to] in degrees
+    clockwise from north, seen from the map centre."""
+    (x0, y0), (x1, y1) = net.getBBoxXY()
+    margin = 400
+    cands = []
+    for eid in usable_edges:
+        e = net.getEdge(eid)
+        n = e.getFromNode()
+        nx, ny = n.getCoord()
+        if not (nx - x0 < margin or x1 - nx < margin or ny - y0 < margin or y1 - ny < margin):
+            continue
+        # entering edge: starts at the boundary node and heads inwards
+        ex, ey = e.getToNode().getCoord()
+        if math.hypot(ex - center[0], ey - center[1]) >= math.hypot(nx - center[0], ny - center[1]):
+            continue
+        b = (math.degrees(math.atan2(nx - center[0], ny - center[1])) + 360) % 360
+        if bearing is not None:
+            lo, hi = bearing
+            if not (lo <= b <= hi if lo <= hi else (b >= lo or b <= hi)):
+                continue
+        cands.append((e.getPriority(), e.getLaneNumber(), eid))
+    cands.sort(reverse=True)
+    if major_only:
+        top = cands[0][0] if cands else 0
+        cands = [c for c in cands if c[0] >= top - 1]
+    out = []
+    for pr, ln, eid in cands[:k]:
+        out.append(eid)
+        back = opposite_edges(net, [eid], usable_edges)
+        out += back[:1]
+    return out
+
+
 def distance_m(net, a_xy, b_xy) -> float:
     return math.hypot(a_xy[0] - b_xy[0], a_xy[1] - b_xy[1])

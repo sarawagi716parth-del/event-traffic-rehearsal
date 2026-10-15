@@ -1,0 +1,4 @@
+{
+ "_how_to": "Fix a place the map build got wrong or could not find. In Google Maps, right-click the spot, click the coordinates to copy them, and add a line like the example below (name exactly as in places_spec.json). Then run: python scripts/build_network.py --skip-netconvert",
+ "_example": [30.7224, 76.7681]
+}

@@ -1,0 +1,28 @@
+{
+ "name": "Plan A: police plan, 14 Dec 2024",
+ "description": "Rebuilt from the published advisory: road to the ground closed from 11 AM, no parking near the ground, five parking areas with shuttles, cabs drop at the lots, diversions from 4 PM at Gaushala Chowk, the Sector 44/45 light point and the Bhawan Vidyalaya School T-point. Shuttle frequency was not published; every 15 minutes is our assumption. The slip road towards Sham Fashion Mall is left out because it is not on our places list.",
+ "closures": [
+  {"road": "Sector 33/34 dividing road", "start": "11:00", "end": "23:30", "allow": ["emergency", "shuttles"]}
+ ],
+ "diversions": [
+  {"junction": "Gaushala Chowk", "blocked_toward": "Exhibition Ground, Sector 34", "send_to": "Faidan Chowk", "start": "16:00", "end": "23:30", "allow": ["emergency", "shuttles"]},
+  {"junction": "Sector 44/45 light point", "blocked_toward": "Exhibition Ground, Sector 34", "send_to": "South End Chowk", "start": "16:00", "end": "23:30", "allow": ["emergency", "shuttles"]},
+  {"junction": "Bhawan Vidyalaya School T-point", "blocked_toward": "Exhibition Ground, Sector 34", "send_to": "Sector 33/34/44/45 Chowk", "start": "16:00", "end": "23:30", "allow": ["emergency", "shuttles"]}
+ ],
+ "parking": [
+  {"lot": "Sector 17 multilevel parking"},
+  {"lot": "Dussehra Ground, Sector 43"},
+  {"lot": "Ground opposite Laxmi Narayan Mandir, Sector 44"},
+  {"lot": "Dussehra Ground, Sector 45"},
+  {"lot": "Mandi Ground, Sector 29"}
+ ],
+ "assignments": [],
+ "dropoffs": ["Sector 17 multilevel parking", "Dussehra Ground, Sector 43", "Ground opposite Laxmi Narayan Mandir, Sector 44", "Dussehra Ground, Sector 45", "Mandi Ground, Sector 29"],
+ "shuttles": [
+  {"lot": "Sector 17 multilevel parking", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Dussehra Ground, Sector 43", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Ground opposite Laxmi Narayan Mandir, Sector 44", "buses": 4, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Dussehra Ground, Sector 45", "buses": 4, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Mandi Ground, Sector 29", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"}
+ ]
+}

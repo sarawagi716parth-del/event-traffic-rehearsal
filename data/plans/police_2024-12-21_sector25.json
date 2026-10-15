@@ -1,0 +1,21 @@
+{
+ "name": "Police plan used for AP Dhillon, 21 Dec 2024",
+ "description": "Rebuilt from the published advisory: no parking at or near the venue, three parking areas with shuttles, the Sector 25/38 and Sector 14/25 dividing roads restricted from 4 PM up to the Dhanas turn. Shuttle frequency is our assumption.",
+ "closures": [
+  {"road": "Sector 25/38 dividing road", "start": "16:00", "end": "23:30", "allow": ["emergency", "shuttles"]},
+  {"road": "Sector 14/25 dividing road", "start": "16:00", "end": "23:30", "allow": ["emergency", "shuttles"]}
+ ],
+ "diversions": [],
+ "parking": [
+  {"lot": "Sector 17 multilevel parking"},
+  {"lot": "Dussehra Ground, Sector 43"},
+  {"lot": "Grain Market Ground, Sector 39"}
+ ],
+ "assignments": [],
+ "dropoffs": ["Sector 17 multilevel parking", "Dussehra Ground, Sector 43", "Grain Market Ground, Sector 39"],
+ "shuttles": [
+  {"lot": "Sector 17 multilevel parking", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Dussehra Ground, Sector 43", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"},
+  {"lot": "Grain Market Ground, Sector 39", "buses": 6, "every_minutes": 15, "start": "15:00", "end": "23:30"}
+ ]
+}

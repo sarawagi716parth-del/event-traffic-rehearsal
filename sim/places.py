@@ -35,11 +35,31 @@ def resolve_places(name: str | None = None) -> dict:
             return network.to_xy(net, p["lat"], p["lon"])
         return p["x"], p["y"]
 
+    (x0, y0), (x1, y1) = net.getBBoxXY()
+    center = ((x0 + x1) / 2, (y0 + y1) / 2)
+
     # Points first (everything except roads)
     for p in raw["places"]:
         if p["kind"] == "road":
             continue
         entry = dict(p)
+        if p["kind"] == "origin" and (p.get("fringe_bearing") or p.get("fringe_major")):
+            edges = network.fringe_edges(net, usable, center, p.get("fringe_bearing"), p.get("fringe_major"))
+            if not edges:
+                problems.append(f"{p['name']}: no entry roads found at the map edge")
+                continue
+            entry["edges"] = edges
+            xs = [network.edge_xy_mid(net, e) for e in edges]
+            entry["xy"] = [round(sum(a for a, _ in xs) / len(xs), 1), round(sum(b for _, b in xs) / len(xs), 1)]
+            resolved[p["name"]] = entry
+            continue
+        if p["kind"] == "origin" and p.get("interior"):
+            entry["xy"] = [round(center[0], 1), round(center[1], 1)]
+            resolved[p["name"]] = entry
+            continue
+        if "lat" not in p and "x" not in p:
+            problems.append(f"{p['name']}: no map position yet (add it to data/places_manual.json)")
+            continue
         x, y = xy_of(p)
         entry["xy"] = [round(x, 1), round(y, 1)]
         if p["kind"] in ("junction", "venue"):
