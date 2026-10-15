@@ -61,8 +61,11 @@ class OllamaBrain:
         errors = []
         for attempt in range(retries + 1):
             self.calls += 1
-            resp = self.client.chat(model=self.model, messages=messages,
-                                    format=model_cls.model_json_schema(), options=self.options)
+            try:
+                resp = self.client.chat(model=self.model, messages=messages,
+                                        format=model_cls.model_json_schema(), options=self.options)
+            except Exception as exc:  # noqa: BLE001  (Ollama stopped, model unloaded, timeout...)
+                raise BrainError(f"Could not reach Gemma: {exc.__class__.__name__}: {exc}") from exc
             text = resp.message.content or ""
             try:
                 obj = model_cls.model_validate_json(_strip_fences(text))

@@ -6,6 +6,7 @@ plan run and the normal-evening run can be compared trip by trip.
 """
 from __future__ import annotations
 
+import itertools
 import math
 import random
 from dataclasses import dataclass, field
@@ -59,6 +60,7 @@ class Demand:
 
 
 def _weighted_edges(index, usable, exclude_xy=None, exclude_r=0.0, net=None):
+    """Edges and *cumulative* weights (length x lanes), for fast rng.choices(..., cum_weights=...)."""
     out, weights = [], []
     for eid, e in index["edges"].items():
         if eid not in usable:
@@ -69,7 +71,7 @@ def _weighted_edges(index, usable, exclude_xy=None, exclude_r=0.0, net=None):
                 continue
         out.append(eid)
         weights.append(e["length"] * e["lanes"])
-    return out, weights
+    return out, list(itertools.accumulate(weights))
 
 
 def _sample_time(rng, start, end, peak_last=7200, peak_share=0.65):
@@ -128,12 +130,12 @@ def build_demand(scn: Scenario, plan: Plan | None, seed: int, include_event: boo
             vt = rng.choices(types, type_w)[0]
             if entry_edges and rng.random() < scn.normal.outside_share:
                 if rng.random() < 0.5:
-                    frm, to = rng.choice(entry_edges), rng.choices(interior, w_int)[0]
+                    frm, to = rng.choice(entry_edges), rng.choices(interior, cum_weights=w_int)[0]
                 else:
-                    frm, to = rng.choices(interior, w_int)[0], rng.choice(entry_edges)
+                    frm, to = rng.choices(interior, cum_weights=w_int)[0], rng.choice(entry_edges)
             else:
                 for _try in range(10):
-                    frm, to = rng.choices(interior, w_int, k=2)
+                    frm, to = rng.choices(interior, cum_weights=w_int, k=2)
                     a, b = mid(frm), mid(to)
                     if math.hypot(a[0] - b[0], a[1] - b[1]) > 1500:
                         break
@@ -209,7 +211,7 @@ def build_demand(scn: Scenario, plan: Plan | None, seed: int, include_event: boo
             name_ = rng.choices(names_, [shares[n] / total_share for n in names_])[0]
             o = pl.get(name_)
             if o is None or o.get("interior") or not o.get("edges"):
-                e = rng.choices(interior_far, w_far)[0]
+                e = rng.choices(interior_far, cum_weights=w_far)[0]
                 return name_, e
             return name_, rng.choice(o["edges"])
 
@@ -275,9 +277,9 @@ def build_demand(scn: Scenario, plan: Plan | None, seed: int, include_event: boo
             travel = math.hypot(fxy[0] - dxy[0], fxy[1] - dxy[1]) / 6.0
             tid = f"ev{ei}_cab{i}"
             add(dep, tid, "cab", frm, dpe, "visitor|cab")
-            add(dep + travel + 120, tid + "_empty", "cab", dpe, rng.choices(interior, w_int)[0], "cab_empty")
+            add(dep + travel + 120, tid + "_empty", "cab", dpe, rng.choices(interior, cum_weights=w_int)[0], "cab_empty")
             ex = _sample_exit(rng, e0, ev.exit_minutes)
-            add(ex - 1800 * rng.random() - 300, tid + "_pickup", "cab", rng.choices(interior, w_int)[0], dpe,
+            add(ex - 1800 * rng.random() - 300, tid + "_pickup", "cab", rng.choices(interior, cum_weights=w_int)[0], dpe,
                 "cab_empty")
             add(ex, tid + "_out", "cab", dpe, frm, "visitor_exit")
             d.visitor_vehicles += 1

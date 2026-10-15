@@ -202,24 +202,25 @@ class Agent:
             best_plan = R.plan(best)
             prompt = build_prompt(R, best, rids, tried)
             allowed = numbers_in(prompt)
-            applied_plan, descs, rejected = None, [], []
+            applied_plan, descs, rejected, applied_reasons = None, [], [], []
 
             def validate(reply: RoundReply):
-                nonlocal applied_plan, descs, rejected
+                nonlocal applied_plan, descs, rejected, applied_reasons
                 bad = check_numbers(reply.diagnosis + " " + reply.expected_effect, allowed)
                 if bad:
                     raise ValueError(f"These numbers are not in the results: {', '.join(bad)}. "
                                      "Only quote numbers from the results.")
-                p, ds, rej = best_plan, [], []
+                p, ds, rej, rs = best_plan, [], [], []
                 for ch in reply.changes:
                     try:
                         p, d = apply_change(p, ch, R.scn)
                         ds.append(d)
+                        rs.append(ch.reason)
                     except MenuError as exc:
                         rej.append(f"{ch.action}: {exc}")
                 if reply.changes and not ds:
                     raise ValueError("None of the changes are valid: " + " | ".join(rej))
-                applied_plan, descs, rejected = p, ds, rej
+                applied_plan, descs, rejected, applied_reasons = p, ds, rej, rs
 
             retries = []
             try:
@@ -254,7 +255,7 @@ class Agent:
             rids.append(new_rid)
             prev_m, new_m = R.results(best), R.results(new_rid)
             entry = RoundLog(n, new_rid, applied_plan.name, changes=descs,
-                             reasons=[c.reason for c in reply.changes], diagnosis=reply.diagnosis,
+                             reasons=applied_reasons, diagnosis=reply.diagnosis,
                              expected=reply.expected_effect, result=describe_result(prev_m, new_m, R.scn),
                              headline=metrics.headline(new_m), retries=retries, rejected=rejected,
                              brain=self.brain.label)
