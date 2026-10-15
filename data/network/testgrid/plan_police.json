@@ -1,0 +1,5 @@
+{"name": "Test police plan", "closures": [{"road": "Test Venue Road", "start": "11:00", "end": "23:30", "allow": ["emergency", "shuttles"]}],
+ "diversions": [{"junction": "Test Chowk C3", "blocked_toward": "Test Chowk D3", "send_to": "Test Chowk C2", "start": "16:00", "end": "23:30"}],
+ "parking": [{"lot": "Test Lot North"}, {"lot": "Test Lot West"}, {"lot": "Test Lot East"}, {"lot": "Test Lot South"}],
+ "dropoffs": ["Test Lot West", "Test Lot East"],
+ "shuttles": [{"lot": "Test Lot North", "buses": 6, "every_minutes": 10}]}

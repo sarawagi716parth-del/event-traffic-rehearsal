@@ -1,0 +1,514 @@
+{
+ "network": "testgrid",
+ "places": {
+  "Test Venue Ground": {
+   "name": "Test Venue Ground",
+   "kind": "venue",
+   "lat": 30.727051,
+   "lon": 76.779258,
+   "xy": [
+    3793.0,
+    3991.6
+   ],
+   "node": "n4_2",
+   "snap_m": 397.1,
+   "edges": [
+    "n4_3ton4_2",
+    "n3_2ton3_3"
+   ],
+   "approach_edges": [
+    "n5_2ton4_2",
+    "n4_3ton4_2",
+    "n4_1ton4_2",
+    "n3_2ton4_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.0
+   }
+  },
+  "Test Chowk C2": {
+   "name": "Test Chowk C2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.775078,
+   "xy": [
+    3402.2,
+    3385.6
+   ],
+   "node": "n3_2",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n4_2ton3_2",
+    "n3_3ton3_2",
+    "n3_1ton3_2",
+    "n2_2ton3_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.72
+   }
+  },
+  "Test Chowk D2": {
+   "name": "Test Chowk D2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.783438,
+   "xy": [
+    4202.8,
+    3398.3
+   ],
+   "node": "n4_2",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n5_2ton4_2",
+    "n4_3ton4_2",
+    "n4_1ton4_2",
+    "n3_2ton4_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.72
+   }
+  },
+  "Test Chowk C3": {
+   "name": "Test Chowk C3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.775078,
+   "xy": [
+    3383.2,
+    4585.1
+   ],
+   "node": "n3_3",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n4_3ton3_3",
+    "n3_4ton3_3",
+    "n3_2ton3_3",
+    "n2_3ton3_3"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.72
+   }
+  },
+  "Test Chowk D3": {
+   "name": "Test Chowk D3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.783438,
+   "xy": [
+    4183.7,
+    4597.8
+   ],
+   "node": "n4_3",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n5_3ton4_3",
+    "n4_4ton4_3",
+    "n4_2ton4_3",
+    "n3_3ton4_3"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.72
+   }
+  },
+  "Test Chowk B2": {
+   "name": "Test Chowk B2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.766719,
+   "xy": [
+    2601.7,
+    3373.0
+   ],
+   "node": "n2_2",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n3_2ton2_2",
+    "n2_3ton2_2",
+    "n2_1ton2_2",
+    "n1_2ton2_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.34
+   }
+  },
+  "Test Chowk E2": {
+   "name": "Test Chowk E2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.791797,
+   "xy": [
+    5003.3,
+    3411.1
+   ],
+   "node": "n5_2",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n6_2ton5_2",
+    "n5_3ton5_2",
+    "n5_1ton5_2",
+    "n4_2ton5_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.34
+   }
+  },
+  "Test Chowk C1": {
+   "name": "Test Chowk C1",
+   "kind": "junction",
+   "lat": 30.710821,
+   "lon": 76.775078,
+   "xy": [
+    3421.2,
+    2186.3
+   ],
+   "node": "n3_1",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n4_1ton3_1",
+    "n3_2ton3_1",
+    "n3_0ton3_1",
+    "n2_1ton3_1"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.84
+   }
+  },
+  "Test Chowk D4": {
+   "name": "Test Chowk D4",
+   "kind": "junction",
+   "lat": 30.743282,
+   "lon": 76.783438,
+   "xy": [
+    4164.6,
+    5797.1
+   ],
+   "node": "n4_4",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "n5_4ton4_4",
+    "n4_5ton4_4",
+    "n4_3ton4_4",
+    "n3_4ton4_4"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.84
+   }
+  },
+  "Test Chowk A2": {
+   "name": "Test Chowk A2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.75,
+   "xy": [
+    1000.6,
+    3347.9
+   ],
+   "node": "n0_2",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "stubWton0_2",
+    "n1_2ton0_2",
+    "n0_3ton0_2",
+    "n0_1ton0_2"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 2.87
+   }
+  },
+  "Test Chowk F3": {
+   "name": "Test Chowk F3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.800157,
+   "xy": [
+    5784.6,
+    4623.4
+   ],
+   "node": "n6_3",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "stubEton6_3",
+    "n6_4ton6_3",
+    "n6_2ton6_3",
+    "n5_3ton6_3"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 2.09
+   }
+  },
+  "Test Chowk E0": {
+   "name": "Test Chowk E0",
+   "kind": "junction",
+   "lat": 30.7,
+   "lon": 76.783438,
+   "xy": [
+    4240.9,
+    999.5
+   ],
+   "node": "n4_0",
+   "snap_m": 0.0,
+   "approach_edges": [
+    "stubSton4_0",
+    "n5_0ton4_0",
+    "n4_1ton4_0",
+    "n3_0ton4_0"
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 3.03
+   }
+  },
+  "Test Lot North": {
+   "name": "Test Lot North",
+   "kind": "parking",
+   "lat": 30.743282,
+   "lon": 76.779258,
+   "capacity": 1500,
+   "xy": [
+    3764.4,
+    5790.8
+   ],
+   "edges": [
+    "n3_4ton4_4",
+    "n4_4ton3_4"
+   ],
+   "snap_m": 1.6,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.8
+   }
+  },
+  "Test Lot West": {
+   "name": "Test Lot West",
+   "kind": "parking",
+   "lat": 30.721641,
+   "lon": 76.762539,
+   "capacity": 1200,
+   "xy": [
+    2201.4,
+    3366.7
+   ],
+   "edges": [
+    "n1_2ton2_2",
+    "n2_2ton1_2"
+   ],
+   "snap_m": 3.2,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.71
+   }
+  },
+  "Test Lot East": {
+   "name": "Test Lot East",
+   "kind": "parking",
+   "lat": 30.732462,
+   "lon": 76.795977,
+   "capacity": 1200,
+   "xy": [
+    5384.4,
+    4617.0
+   ],
+   "edges": [
+    "n5_3ton6_3",
+    "n6_3ton5_3"
+   ],
+   "snap_m": 1.6,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.71
+   }
+  },
+  "Test Lot South": {
+   "name": "Test Lot South",
+   "kind": "parking",
+   "lat": 30.70541,
+   "lon": 76.783438,
+   "capacity": 1000,
+   "xy": [
+    4231.4,
+    1599.2
+   ],
+   "edges": [
+    "n4_0ton4_1",
+    "n4_1ton4_0"
+   ],
+   "snap_m": 3.2,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 2.43
+   }
+  },
+  "Test Hospital A": {
+   "name": "Test Hospital A",
+   "kind": "hospital",
+   "lat": 30.732462,
+   "lon": 76.770899,
+   "xy": [
+    2983.1,
+    4578.7
+   ],
+   "edges": [
+    "n2_3ton3_3",
+    "n3_3ton2_3"
+   ],
+   "snap_m": 1.6,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.0
+   }
+  },
+  "Test Hospital B": {
+   "name": "Test Hospital B",
+   "kind": "hospital",
+   "lat": 30.721641,
+   "lon": 76.787618,
+   "xy": [
+    4603.1,
+    3404.7
+   ],
+   "edges": [
+    "n4_2ton5_2",
+    "n5_2ton4_2"
+   ],
+   "snap_m": 3.2,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 1.0
+   }
+  },
+  "Test City": {
+   "name": "Test City",
+   "kind": "origin",
+   "lat": 30.727051,
+   "lon": 76.775078,
+   "interior": true,
+   "xy": [
+    3392.7,
+    3985.3
+   ],
+   "edges": [
+    "n3_2ton3_3",
+    "n3_3ton3_2",
+    "n3_2ton2_2"
+   ],
+   "snap_m": 1.6,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.4
+   }
+  },
+  "Test West Town": {
+   "name": "Test West Town",
+   "kind": "origin",
+   "lat": 30.721641,
+   "lon": 76.739551,
+   "xy": [
+    0.0,
+    3332.3
+   ],
+   "edges": [
+    "stubWton0_2",
+    "n0_2tostubW"
+   ],
+   "snap_m": 0.0,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 3.85
+   }
+  },
+  "Test East Town": {
+   "name": "Test East Town",
+   "kind": "origin",
+   "lat": 30.732462,
+   "lon": 76.810606,
+   "xy": [
+    6785.2,
+    4639.5
+   ],
+   "edges": [
+    "n6_3tostubE",
+    "stubEton6_3"
+   ],
+   "snap_m": 0.0,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 3.06
+   }
+  },
+  "Test South Town": {
+   "name": "Test South Town",
+   "kind": "origin",
+   "lat": 30.690983,
+   "lon": 76.783438,
+   "xy": [
+    4256.8,
+    -0.0
+   ],
+   "edges": [
+    "stubSton4_0",
+    "n4_0tostubS"
+   ],
+   "snap_m": 0.0,
+   "dist_from_venue_km": {
+    "Test Venue Ground": 4.02
+   }
+  },
+  "Test Venue Road": {
+   "name": "Test Venue Road",
+   "kind": "road",
+   "from": "Test Chowk C2",
+   "to": "Test Chowk D2",
+   "sensitive_area": true,
+   "edges_forward": [
+    "n3_2ton4_2"
+   ],
+   "edges_back": [
+    "n4_2ton3_2"
+   ],
+   "length_m": 783.1,
+   "xy": [
+    3802.5,
+    3391.9
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.6
+   }
+  },
+  "Test Market Road": {
+   "name": "Test Market Road",
+   "kind": "road",
+   "from": "Test Chowk C3",
+   "to": "Test Chowk D3",
+   "sensitive_area": true,
+   "edges_forward": [
+    "n3_3ton4_3"
+   ],
+   "edges_back": [
+    "n4_3ton3_3"
+   ],
+   "length_m": 783.0,
+   "xy": [
+    3783.4,
+    4591.5
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.6
+   }
+  },
+  "Test Middle Avenue": {
+   "name": "Test Middle Avenue",
+   "kind": "road",
+   "from": "Test Chowk B2",
+   "to": "Test Chowk E2",
+   "edges_forward": [
+    "n2_2ton3_2",
+    "n3_2ton4_2",
+    "n4_2ton5_2"
+   ],
+   "edges_back": [
+    "n5_2ton4_2",
+    "n4_2ton3_2",
+    "n3_2ton2_2"
+   ],
+   "length_m": 2349.1,
+   "xy": [
+    3802.5,
+    3392.1
+   ],
+   "dist_from_venue_km": {
+    "Test Venue Ground": 0.6
+   }
+  }
+ },
+ "problems": []
+}

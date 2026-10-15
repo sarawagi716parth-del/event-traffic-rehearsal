@@ -1,0 +1,7 @@
+{"id": "testgrid_concert", "title": "Test concert on the stand-in grid",
+ "events": [{"type": "concert", "name": "Test concert", "venue": "Test Venue Ground", "date": "2024-12-14",
+   "arrival_start": "15:00", "show_start": "19:00", "show_end": "22:00", "crowd": 12000,
+   "origin_shares": {"Test City": 0.5, "Test West Town": 0.2, "Test East Town": 0.15, "Test South Town": 0.15}}],
+ "normal": {"total_daily_trips": 25000},
+ "protected_hospitals": ["Test Hospital A", "Test Hospital B"],
+ "sim_begin": "13:00", "sim_end": "25:00"}

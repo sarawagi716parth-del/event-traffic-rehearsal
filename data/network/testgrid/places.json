@@ -1,0 +1,162 @@
+{
+ "note": "Stand-in test grid, not Chandigarh",
+ "places": [
+  {
+   "name": "Test Venue Ground",
+   "kind": "venue",
+   "lat": 30.727051,
+   "lon": 76.779258
+  },
+  {
+   "name": "Test Chowk C2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.775078
+  },
+  {
+   "name": "Test Chowk D2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.783438
+  },
+  {
+   "name": "Test Chowk C3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.775078
+  },
+  {
+   "name": "Test Chowk D3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.783438
+  },
+  {
+   "name": "Test Chowk B2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.766719
+  },
+  {
+   "name": "Test Chowk E2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.791797
+  },
+  {
+   "name": "Test Chowk C1",
+   "kind": "junction",
+   "lat": 30.710821,
+   "lon": 76.775078
+  },
+  {
+   "name": "Test Chowk D4",
+   "kind": "junction",
+   "lat": 30.743282,
+   "lon": 76.783438
+  },
+  {
+   "name": "Test Chowk A2",
+   "kind": "junction",
+   "lat": 30.721641,
+   "lon": 76.75
+  },
+  {
+   "name": "Test Chowk F3",
+   "kind": "junction",
+   "lat": 30.732462,
+   "lon": 76.800157
+  },
+  {
+   "name": "Test Chowk E0",
+   "kind": "junction",
+   "lat": 30.7,
+   "lon": 76.783438
+  },
+  {
+   "name": "Test Venue Road",
+   "kind": "road",
+   "from": "Test Chowk C2",
+   "to": "Test Chowk D2",
+   "sensitive_area": true
+  },
+  {
+   "name": "Test Market Road",
+   "kind": "road",
+   "from": "Test Chowk C3",
+   "to": "Test Chowk D3",
+   "sensitive_area": true
+  },
+  {
+   "name": "Test Middle Avenue",
+   "kind": "road",
+   "from": "Test Chowk B2",
+   "to": "Test Chowk E2"
+  },
+  {
+   "name": "Test Lot North",
+   "kind": "parking",
+   "lat": 30.743282,
+   "lon": 76.779258,
+   "capacity": 1500
+  },
+  {
+   "name": "Test Lot West",
+   "kind": "parking",
+   "lat": 30.721641,
+   "lon": 76.762539,
+   "capacity": 1200
+  },
+  {
+   "name": "Test Lot East",
+   "kind": "parking",
+   "lat": 30.732462,
+   "lon": 76.795977,
+   "capacity": 1200
+  },
+  {
+   "name": "Test Lot South",
+   "kind": "parking",
+   "lat": 30.70541,
+   "lon": 76.783438,
+   "capacity": 1000
+  },
+  {
+   "name": "Test Hospital A",
+   "kind": "hospital",
+   "lat": 30.732462,
+   "lon": 76.770899
+  },
+  {
+   "name": "Test Hospital B",
+   "kind": "hospital",
+   "lat": 30.721641,
+   "lon": 76.787618
+  },
+  {
+   "name": "Test City",
+   "kind": "origin",
+   "lat": 30.727051,
+   "lon": 76.775078,
+   "interior": true
+  },
+  {
+   "name": "Test West Town",
+   "kind": "origin",
+   "lat": 30.721641,
+   "lon": 76.739551
+  },
+  {
+   "name": "Test East Town",
+   "kind": "origin",
+   "lat": 30.732462,
+   "lon": 76.810606
+  },
+  {
+   "name": "Test South Town",
+   "kind": "origin",
+   "lat": 30.690983,
+   "lon": 76.783438
+  }
+ ]
+}
