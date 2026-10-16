@@ -1,0 +1,410 @@
+{
+ "about": "Named places for Chandigarh. scripts/build_network.py finds each one on the map: first by its OpenStreetMap name (osm_names), then from the sector grid (sectors: the sectors that meet at a chowk, or the sector a ground sits in). Positions that come from the sector grid are approximate; check them on the map preview and fix any wrong one in data/places_manual.json. Names come from the December 2024 police advisories (docs/02-december-2024-concerts.md). Parking capacities are estimates from ground sizes, not official figures.",
+ "places": [
+  {
+   "name": "Exhibition Ground, Sector 34",
+   "kind": "venue",
+   "aliases": [
+    "Sector 34 ground",
+    "Exhibition Ground",
+    "Sector 34 Exhibition Ground"
+   ],
+   "lat": 30.718921,
+   "lon": 76.769359,
+   "found_by": "OpenStreetMap name 'Sector 34 Exhibition Ground'"
+  },
+  {
+   "name": "Rally Ground, Sector 25",
+   "kind": "venue",
+   "aliases": [
+    "Rally Ground",
+    "Sector 25 Rally Ground"
+   ],
+   "lat": 30.751647,
+   "lon": 76.756732,
+   "found_by": "sector grid 25 (approximate)"
+  },
+  {
+   "name": "Piccadilly Chowk",
+   "kind": "junction",
+   "aliases": [
+    "Piccadily Chowk",
+    "Sector 21/22/34/35 Chowk"
+   ],
+   "sensitive_area": true,
+   "lat": 30.726592,
+   "lon": 76.768244,
+   "found_by": "sector grid 21/22/34/35 (approximate)"
+  },
+  {
+   "name": "Sector 20/21/33/34 Chowk",
+   "kind": "junction",
+   "aliases": [],
+   "sensitive_area": true,
+   "lat": 30.720532,
+   "lon": 76.773368,
+   "found_by": "sector grid 20/21/33/34 (approximate)"
+  },
+  {
+   "name": "Sector 33/34/44/45 Chowk",
+   "kind": "junction",
+   "aliases": [
+    "Sector 33/45 Chowk"
+   ],
+   "lat": 30.713384,
+   "lon": 76.761598,
+   "found_by": "sector grid 33/34/44/45 (approximate)"
+  },
+  {
+   "name": "Sector 34/35/43/44 Chowk",
+   "kind": "junction",
+   "aliases": [],
+   "lat": 30.719508,
+   "lon": 76.757001,
+   "found_by": "sector grid 34/35/43/44 (approximate)"
+  },
+  {
+   "name": "Sector 33/34 light point",
+   "kind": "junction",
+   "aliases": [
+    "Sector 33/34 light point"
+   ],
+   "sensitive_area": true,
+   "lat": 30.717027,
+   "lon": 76.767676,
+   "found_by": "sector grid 33/34 (approximate)"
+  },
+  {
+   "name": "Sector 44/45 light point",
+   "kind": "junction",
+   "aliases": [],
+   "lat": 30.70974,
+   "lon": 76.75552,
+   "found_by": "sector grid 44/45 (approximate)"
+  },
+  {
+   "name": "Sector 32 junction",
+   "kind": "junction",
+   "aliases": [
+    "Sector 32 chowk",
+    "Sector 20/21/32/33 Chowk"
+   ],
+   "lat": 30.718,
+   "lon": 76.780019,
+   "found_by": "sector grid 20/32/33/19 (approximate)"
+  },
+  {
+   "name": "Faidan Chowk",
+   "kind": "junction",
+   "aliases": [
+    "Faidan",
+    "Faidan side"
+   ],
+   "lat": 30.684514,
+   "lon": 76.768085,
+   "found_by": "OpenStreetMap name 'SubCentre, Faidan Nizampur'"
+  },
+  {
+   "name": "Kajheri Chowk",
+   "kind": "junction",
+   "aliases": [
+    "Kajheri"
+   ],
+   "lat": 30.715028,
+   "lon": 76.737274,
+   "found_by": "OpenStreetMap name 'Kajheri'"
+  },
+  {
+   "name": "Bhawan Vidyalaya School T-point",
+   "kind": "junction",
+   "aliases": [
+    "Bhavan Vidyalaya T-point"
+   ],
+   "lat": 30.7153,
+   "lon": 76.768402,
+   "found_by": "OpenStreetMap name 'Bhavan Vidyalaya (Junior Wing)'"
+  },
+  {
+   "name": "Sector 24/25/37/38 Chowk",
+   "kind": "junction",
+   "aliases": [],
+   "lat": 30.746172,
+   "lon": 76.751824,
+   "found_by": "sector grid 24/25/37/38 (approximate)"
+  },
+  {
+   "name": "Bhaskar Chowk",
+   "kind": "junction",
+   "aliases": [],
+   "lat": 30.74509,
+   "lon": 76.753626,
+   "found_by": "OpenStreetMap name 'Bhaskar Chowk'"
+  },
+  {
+   "name": "Dadu Majra light point",
+   "kind": "junction",
+   "aliases": [
+    "Dadumajra light point"
+   ],
+   "lat": 30.755288,
+   "lon": 76.73892,
+   "found_by": "OpenStreetMap name 'Civil Dispensary -Dadu Majra'"
+  },
+  {
+   "name": "Dhanas turn",
+   "kind": "junction",
+   "aliases": [
+    "Dhanas"
+   ],
+   "lat": 30.76456,
+   "lon": 76.75018,
+   "found_by": "OpenStreetMap name 'Civil Dispensary - Dhanas'"
+  },
+  {
+   "name": "Sector 33/34 dividing road",
+   "kind": "road",
+   "from": "Sector 20/21/33/34 Chowk",
+   "to": "Sector 33/34/44/45 Chowk",
+   "sensitive_area": true
+  },
+  {
+   "name": "Sector 21/34 dividing road",
+   "kind": "road",
+   "from": "Piccadilly Chowk",
+   "to": "Sector 20/21/33/34 Chowk",
+   "sensitive_area": true
+  },
+  {
+   "name": "Sector 34/35 dividing road",
+   "kind": "road",
+   "from": "Piccadilly Chowk",
+   "to": "Sector 34/35/43/44 Chowk",
+   "sensitive_area": true
+  },
+  {
+   "name": "Sector 34/44 dividing road",
+   "kind": "road",
+   "from": "Sector 34/35/43/44 Chowk",
+   "to": "Sector 33/34/44/45 Chowk"
+  },
+  {
+   "name": "Sector 14/25 dividing road",
+   "kind": "road",
+   "from": "Sector 14/15/24/25 Chowk",
+   "to": "Dhanas turn"
+  },
+  {
+   "name": "Sector 25/38 dividing road",
+   "kind": "road",
+   "from": "Sector 24/25/37/38 Chowk",
+   "to": "Dhanas turn"
+  },
+  {
+   "name": "Sector 24/25 dividing road",
+   "kind": "road",
+   "from": "Sector 14/15/24/25 Chowk",
+   "to": "Sector 24/25/37/38 Chowk"
+  },
+  {
+   "name": "Sector 17 multilevel parking",
+   "kind": "parking",
+   "aliases": [
+    "Sector 17 multi-level parking",
+    "Sector 17 MLCP",
+    "Sector 17 parking"
+   ],
+   "capacity": 1500,
+   "lat": 30.740065,
+   "lon": 76.782589,
+   "found_by": "sector grid 17 (approximate)"
+  },
+  {
+   "name": "Dussehra Ground, Sector 43",
+   "kind": "parking",
+   "aliases": [
+    "Sector 43 Dussehra Ground",
+    "Sector 43 ground"
+   ],
+   "capacity": 1200,
+   "lat": 30.719093,
+   "lon": 76.748793,
+   "found_by": "sector grid 43 (approximate)"
+  },
+  {
+   "name": "Ground opposite Laxmi Narayan Mandir, Sector 44",
+   "kind": "parking",
+   "aliases": [
+    "Sector 44 ground",
+    "Laxmi Narayan Mandir ground"
+   ],
+   "capacity": 600,
+   "lat": 30.712895,
+   "lon": 76.754115,
+   "found_by": "sector grid 44 (approximate)"
+  },
+  {
+   "name": "Dussehra Ground, Sector 45",
+   "kind": "parking",
+   "aliases": [
+    "Sector 45 Dussehra Ground",
+    "Sector 45 ground"
+   ],
+   "capacity": 800,
+   "lat": 30.706586,
+   "lon": 76.756926,
+   "found_by": "sector grid 45 (approximate)"
+  },
+  {
+   "name": "Mandi Ground, Sector 29",
+   "kind": "parking",
+   "aliases": [
+    "Sector 29 Mandi Ground",
+    "Sector 29 ground"
+   ],
+   "capacity": 1000,
+   "lat": 30.710257,
+   "lon": 76.792417,
+   "found_by": "sector grid 29 (approximate)"
+  },
+  {
+   "name": "Grain Market Ground, Sector 39",
+   "kind": "parking",
+   "aliases": [
+    "Sector 39 Grain Market",
+    "Sector 39 ground"
+   ],
+   "capacity": 1200,
+   "lat": 30.743735,
+   "lon": 76.730275,
+   "found_by": "sector grid 39 (approximate)"
+  },
+  {
+   "name": "Sector 34 parking zones",
+   "kind": "parking",
+   "aliases": [
+    "Sector 34 parking"
+   ],
+   "capacity": 1500,
+   "note": "The ten parking zones inside Sector 34 used for the Karan Aujla show on 7 Dec 2024",
+   "lat": 30.719924,
+   "lon": 76.765208,
+   "found_by": "sector grid 34 (approximate)"
+  },
+  {
+   "name": "Chandigarh",
+   "kind": "origin",
+   "interior": true
+  },
+  {
+   "name": "Mohali",
+   "kind": "origin",
+   "fringe_bearing": [
+    200,
+    300
+   ]
+  },
+  {
+   "name": "Panchkula and Zirakpur",
+   "kind": "origin",
+   "fringe_bearing": [
+    45,
+    175
+   ]
+  },
+  {
+   "name": "Outside the Tricity",
+   "kind": "origin",
+   "fringe_major": true
+  },
+  {
+   "name": "Virdi Eye Hospital(Virk Hospital)",
+   "kind": "hospital",
+   "lat": 30.719818,
+   "lon": 76.768628,
+   "near": "Exhibition Ground, Sector 34",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Bedi Hospital",
+   "kind": "hospital",
+   "lat": 30.7177,
+   "lon": 76.769382,
+   "near": "Exhibition Ground, Sector 34",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Omni Hospital",
+   "kind": "hospital",
+   "lat": 30.721697,
+   "lon": 76.766972,
+   "near": "Exhibition Ground, Sector 34",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Nins Brain and Spine Hospital",
+   "kind": "hospital",
+   "lat": 30.721826,
+   "lon": 76.766946,
+   "near": "Exhibition Ground, Sector 34",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Mukat Hospital and Heart Institute",
+   "kind": "hospital",
+   "lat": 30.722836,
+   "lon": 76.770339,
+   "near": "Exhibition Ground, Sector 34",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Santokh Hospital",
+   "kind": "hospital",
+   "lat": 30.747863,
+   "lon": 76.748988,
+   "near": "Rally Ground, Sector 25",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Bharat Vikas Parishad Charitable Medical Centre",
+   "kind": "hospital",
+   "lat": 30.747535,
+   "lon": 76.765978,
+   "near": "Rally Ground, Sector 25",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Deep Hospital",
+   "kind": "hospital",
+   "lat": 30.7636,
+   "lon": 76.748321,
+   "near": "Rally Ground, Sector 25",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Dharam Hospital",
+   "kind": "hospital",
+   "lat": 30.749174,
+   "lon": 76.774026,
+   "near": "Rally Ground, Sector 25",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  },
+  {
+   "name": "Neeraj Eye Hospital",
+   "kind": "hospital",
+   "lat": 30.734221,
+   "lon": 76.75258,
+   "near": "Rally Ground, Sector 25",
+   "found_by": "OpenStreetMap amenity=hospital",
+   "aliases": []
+  }
+ ]
+}

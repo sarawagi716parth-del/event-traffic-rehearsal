@@ -6,3 +6,4 @@ data/network/chandigarh/*.osm.xml
 data/network/chandigarh/*.osm
 data/network/*/grid.*.xml
 .streamlit/secrets.toml
+data/network/chandigarh/ 

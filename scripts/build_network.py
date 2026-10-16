@@ -58,9 +58,13 @@ def download(b: dict):
 
     NET_DIR.mkdir(parents=True, exist_ok=True)
     print("Downloading from OpenStreetMap (Overpass API). This can take 1-3 minutes...")
-    for url in ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"):
+    headers = {"User-Agent": "event-traffic-rehearsal/1.0 (hackathon project; github)",
+               "Accept": "*/*"}
+    urls = ("https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter",
+            "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter")
+    for url in urls:
         try:
-            r = requests.post(url, data={"data": overpass_query(b)}, timeout=300)
+            r = requests.post(url, data={"data": overpass_query(b)}, headers=headers, timeout=300)
             if r.ok and b"<osm" in r.content[:500]:
                 OSM_FILE.write_bytes(r.content)
                 print(f"  saved {len(r.content) / 1e6:.1f} MB from {url}")
