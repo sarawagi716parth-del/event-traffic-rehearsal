@@ -94,3 +94,9 @@ Started 16 October 2026. Newest entries at the bottom. Each entry: what we decid
 - [ ] Which Gemma model was used for the demo runs, and whether Colab was used.
 - [ ] Sanity check: do Piccadilly Chowk, New Labour Chowk and the Sector 32 junction show up as trouble
       spots under Plan A? (docs/02, "How the demo uses this case", step 2)
+
+## 12. Final check before Round 1 submission (16 Oct 2026)
+
+- Re-ran the full app flow headless on the stand-in grid: load case, check, rehearse (3 rounds), compare, approve. No errors.
+- Added the 6-slide pitch deck in `presentation/`.
+- Laptop note: an i3-1220P with no GPU runs SUMO fine. Use Gemma 4 E2B on CPU (`ETR_MODEL=gemma4:e2b-it-qat`); expect 1 to 2 minutes per agent round.
