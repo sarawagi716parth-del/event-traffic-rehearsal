@@ -13,7 +13,7 @@
   "exit_minutes": 45,
   "notes": "Entry opened at 3 PM and the court required the show to end by 10 PM (reported). The 7 PM start is our assumption. Crowd size was not reported; 20,000 matches the Karan Aujla show a week earlier."
  }],
- "normal": {"total_daily_trips": 120000},
+ "normal": {"total_daily_trips": 30000},
  "protected_hospitals": [],
  "ambulance_limit_min": 5,
  "rain": "none",
@@ -25,7 +25,7 @@
   "Travel mode: car 50%, two-wheeler 25%, cab or auto 20%, walk 5%",
   "People per vehicle: car 2.5, two-wheeler 1.5, cab 2.5",
   "Visitors from Chandigarh 50%, Mohali 20%, Panchkula and Zirakpur 15%, outside 15%",
-  "Normal traffic: 120,000 trips a day on a standard two-peak curve (to be tuned, see docs)",
+  "Normal traffic: 30,000 trips a day on a standard two-peak curve (tuned on the real map: no stuck vehicles, main roads at 63% of the speed limit at 6 to 7 PM)",
   "Parking capacities estimated from ground sizes",
   "Signal timings are SUMO defaults"
  ]
