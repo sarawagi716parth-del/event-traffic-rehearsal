@@ -38,6 +38,8 @@ SPEC = config.DATA / "places_spec.json"
 MANUAL = config.DATA / "places_manual.json"
 OUT = config.DATA / "places.json"
 
+KEEP_TYPES = ("motorway", "motorway_link", "trunk", "trunk_link", "primary", "primary_link",
+              "secondary", "secondary_link", "tertiary", "tertiary_link")
 ROAD_TYPES = ("motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|"
               "tertiary|tertiary_link|unclassified|residential")
 
@@ -83,6 +85,9 @@ def netconvert():
             "--junctions.join", "true", "--tls.guess-signals", "true", "--tls.discard-simple", "true",
             "--tls.join", "true", "--tls.default-type", "static",
             "--remove-edges.isolated", "true", "--keep-edges.by-vclass", "passenger",
+            # Keep main and connecting roads only. Residential lanes multiply the network size
+            # several times and make every run slow on a laptop without changing which plan wins.
+            "--keep-edges.by-type", ",".join(f"highway.{t}" for t in KEEP_TYPES),
             "--edges.join", "true", "--output.street-names", "true", "--output.original-names", "true",
             "--osm.elevation", "false", "--no-warnings", "true", "--proj.utm", "true"]
     subprocess.run(args, check=True)
