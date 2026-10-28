@@ -300,7 +300,7 @@ def step_rehearse():
     brain = get_brain()
     st.markdown(f'<p class="etr-muted">Round 1 tests the starting plan. Then the planning assistant '
                 f'({brain.label}) finds the worst bottleneck, changes up to 3 things, and tests again. '
-                f'Limits: {S.rounds} rounds, 15 simulation runs, 30 minutes.</p>', unsafe_allow_html=True)
+                f'Limits: {S.rounds} rounds, 15 simulation runs, {Budget().max_minutes:.0f} minutes.</p>', unsafe_allow_html=True)
     c1, c2 = st.columns([1, 3])
     run = c1.button("Run rehearsal", type="primary", disabled=S.role != "Planner" and S.role != "Approver")
     if log_file.exists() and not run:

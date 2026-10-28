@@ -100,3 +100,32 @@ Started 16 October 2026. Newest entries at the bottom. Each entry: what we decid
 - Re-ran the full app flow headless on the stand-in grid: load case, check, rehearse (3 rounds), compare, approve. No errors.
 - Added the 6-slide pitch deck in `presentation/`.
 - Laptop note: an i3-1220P with no GPU runs SUMO fine. Use Gemma 4 E2B on CPU (`ETR_MODEL=gemma4:e2b-it-qat`); expect 1 to 2 minutes per agent round.
+
+## 13. Bug fixes before the next submission (28 Oct 2026)
+
+Found by reading the code and the run logs from 22 and 23 October, then checked on the test grid.
+
+- **Windows file lock.** After a run, deleting `routes.xml` could fail on Windows (`WinError 32`)
+  because SUMO still held the file. The worker then crashed and the whole rehearsal stopped, even
+  though the result was already saved (seen on 22 Oct, `normal_d8b43f52e3/seed11/worker.log`).
+  `sim/runner.py` now skips a file it can't delete. The leftover XML file is harmless.
+- **Time limit.** On the real map the normal evening plus round 1 took 113.5 minutes, so the
+  30-minute limit stopped every rehearsal before Gemma could plan (23 Oct decision log). The limit
+  is now 600 minutes, set in code as before, and can be changed with `ETR_MAX_MINUTES`. The app
+  shows the real value on step 3.
+- **Full map by default.** A fresh `scripts/build_network.py` run dropped residential roads, against
+  the decision of 16 Oct. The full map is the default again; `--main-roads-only` is an option. The
+  map already on the laptop was built before that change and is the full map, so nothing to rebuild.
+- **Parking lots from the notice.** On 23 Oct Gemma E2B read the notice with no parking lots, so all
+  visitors parked informally near the venue (22,400.7 vehicle-hours of extra delay, ambulance rule
+  failed). `agent/extract.py` now adds any lot the keyword reader finds in the notice to Gemma's list.
+  Only lots and the cab drop-off flag are merged: the keyword reader over-matches roads and diversions.
+- **Not changed:** the 23 Oct evening run (Gemma E4B) stopped about 4 minutes in with an empty
+  worker log. The same job ran past that point without a crash on Linux, so the simulation itself is
+  not the cause. Likely the run was stopped from outside or the laptop ran short of memory with E4B
+  loaded. If it happens again, use `set ETR_WORKERS=1` with E4B, or E2B, and don't click in the app
+  while a rehearsal runs.
+- **Tested** (test grid, SUMO 1.28.0): fixed-rule rehearsal and Gemma-path rehearsal end to end; a
+  run with `routes.xml` locked finishes and keeps its result; a Gemma reply with no lots keeps all
+  five lots from the real notice; `--main-roads-only` shows in `--help`. Still to run on the laptop:
+  a real-map smoke test (`python scripts\check_setup.py`).

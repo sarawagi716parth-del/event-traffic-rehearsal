@@ -172,7 +172,12 @@ def run_one(job: dict) -> str:
         pickle.dump(raw, fh)
     if not job.get("keep_xml"):
         for p in (routes, trip_out, edge_out):
-            p.unlink(missing_ok=True)
+            try:
+                p.unlink(missing_ok=True)
+            except OSError:
+                # Windows: SUMO can still hold a file for a moment after close(). The result
+                # is already saved above, so a leftover XML file is harmless.
+                pass
     return str(path)
 
 

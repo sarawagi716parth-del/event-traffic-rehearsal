@@ -8,6 +8,7 @@ by the model (guardrail 5).
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 from dataclasses import dataclass, field
@@ -41,7 +42,7 @@ Reply only with JSON: {"diagnosis": "...", "changes": [{"action": "...", "args":
 class Budget:
     max_rounds: int = 5
     max_runs: int = 15
-    max_minutes: float = 30.0
+    max_minutes: float = float(os.environ.get("ETR_MAX_MINUTES", 600))
     min_gain: float = 0.05  # stop when the main score improves by less than 5% two rounds in a row
 
 

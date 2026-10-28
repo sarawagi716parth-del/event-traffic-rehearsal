@@ -77,7 +77,7 @@ def download(b: dict):
     raise SystemExit("Download failed. See the instructions at the top of this script for the browser route.")
 
 
-def netconvert():
+def netconvert(main_roads_only=False):
     print("Converting roads to a SUMO network (netconvert)...")
     args = [config.sumo_binary("netconvert"), "--osm-files", str(OSM_FILE),
             "-o", str(config.net_file("chandigarh")),
@@ -85,11 +85,10 @@ def netconvert():
             "--junctions.join", "true", "--tls.guess-signals", "true", "--tls.discard-simple", "true",
             "--tls.join", "true", "--tls.default-type", "static",
             "--remove-edges.isolated", "true", "--keep-edges.by-vclass", "passenger",
-            # Keep main and connecting roads only. Residential lanes multiply the network size
-            # several times and make every run slow on a laptop without changing which plan wins.
-            "--keep-edges.by-type", ",".join(f"highway.{t}" for t in KEEP_TYPES),
             "--edges.join", "true", "--output.street-names", "true", "--output.original-names", "true",
             "--osm.elevation", "false", "--no-warnings", "true", "--proj.utm", "true"]
+    if main_roads_only:  # optional: drop residential lanes for faster runs on small machines
+        args += ["--keep-edges.by-type", ",".join(f"highway.{t}" for t in KEEP_TYPES)]
     subprocess.run(args, check=True)
 
 
@@ -164,6 +163,7 @@ def main():
     ap.add_argument("--offline", action="store_true", help="use the OSM file already saved")
     ap.add_argument("--skip-netconvert", action="store_true", help="only re-place the named places")
     ap.add_argument("--print-query", action="store_true")
+    ap.add_argument("--main-roads-only", action="store_true", help="smaller, faster map without residential lanes")
     args = ap.parse_args()
     spec = json.loads(SPEC.read_text(encoding="utf-8"))
     if args.print_query:
@@ -174,7 +174,7 @@ def main():
     if not OSM_FILE.exists():
         raise SystemExit(f"{OSM_FILE} is missing. Run without --offline first.")
     if not args.skip_netconvert:
-        netconvert()
+        netconvert(args.main_roads_only)
 
     named, sectors, hospitals = read_osm_features()
     print(f"Found {len(sectors)} sector names, {len(hospitals)} hospitals, {len(named)} named features")

@@ -85,6 +85,11 @@ def read_notice(text: str, brain) -> tuple[NoticeFields, str, list[str]]:
                 f"Known venues: {venues}\nKnown parking lots: {lots}\nKnown roads: {roads}\n"
                 f"Known junctions: {juncs}\n\nNotice:\n{text}\n\nFill the JSON fields.", NoticeFields)
             source = "gemma"
+            # Guardrail: a small model can leave out parking lots the notice names plainly.
+            # Add any lot the keyword reader finds, so the starting plan never loses them.
+            kw = keyword_fields(text)
+            f.parking_lots = list(f.parking_lots) + [x for x in kw.parking_lots if x not in f.parking_lots]
+            f.cabs_drop_at_parking = f.cabs_drop_at_parking or kw.cabs_drop_at_parking
         except BrainError:
             f, source = keyword_fields(text), "keywords"
     else:

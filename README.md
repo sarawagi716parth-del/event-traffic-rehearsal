@@ -61,7 +61,7 @@ Do these in order. Each step says what you should see.
 
 ### 2. Get the code and the Python libraries
 ```
-git clone https://github.com/<your-account>/event-traffic-rehearsal.git
+git clone https://github.com/sarawagi716parth-del/event-traffic-rehearsal.git
 cd event-traffic-rehearsal
 python -m venv .venv
 .venv\Scripts\activate
